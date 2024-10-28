@@ -157,6 +157,7 @@ class SignInState extends State<SignIn> {
                                                   .toString()
                                                   .trim())
                                           .then((documentSnapshot) async {
+                                            print(documentSnapshot);
                                         setState(() {
                                           isLooding = false;
                                         });

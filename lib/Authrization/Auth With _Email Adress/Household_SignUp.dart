@@ -259,6 +259,7 @@ class SignUpState extends State<SignUp> {
                                             .putFile(File(imageFile!.path));
                                         imageUrl = await referenceImageUpload
                                             .getDownloadURL();
+                                            
                                         users.doc(_auth.currentUser!.uid).set({
                                           'username': userNameController.text
                                               .toString(),

@@ -120,7 +120,6 @@ class Drawerpage extends StatelessWidget {
                       final SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       prefs.remove("uid");
-
                       welcomePage().launch(context, isNewTask: true);
                     },
                   ),
