@@ -19,11 +19,10 @@ dependencies:
   # Base
   cupertino_icons: ^1.0.3
   country_code_picker: ^3.0.0
-  # shared_preferences: ^2.1.0
-  nb_utils: ^4.4.8
+  nb_utils: ^7.0.2
   intl: ^0.18.0
   flutter_vector_icons: ^1.0.0
-  google_fonts: ^2.1.0
+  google_fonts: ^6.2.1
   sliding_up_panel: ^2.0.0+1
   image_picker: ^0.8.7+5
   
@@ -61,8 +60,8 @@ dependencies:
   cached_network_image: ^3.1.0
 
   #Localization
-  flutter_localizations:
-    sdk: flutter
+  # flutter_localizations:
+  #   sdk: flutter
 
   #images
   flutter_svg: ^1.1.4

@@ -29,7 +29,6 @@ class _HomeServicesState extends State<HomeServices> {
   @override
   Widget build(BuildContext context) {
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
-
     Stream<QuerySnapshot> getTechincains() {
       return firestore
           .collection('technicians')

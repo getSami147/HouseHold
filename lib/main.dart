@@ -1,7 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:household/Household%20Technician%20Side/TechnisionSide.dart';
 import 'package:household/Household%20User%20Side/Household_Dashboard.dart';
 import 'package:household/Household%20User%20Side/Household_Splash.dart';
@@ -63,33 +61,23 @@ class MyApp extends StatelessWidget {
           create: (context) => LoginProvider(),
         ),
       ],
-      child: Observer(
-        builder: (_) => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Household${!isMobile ? ' ${platformName()}' : ''}',
-          home: FutureBuilder(
-              future: checkLoginStatus(),
-              builder: (context, AsyncSnapshot<bool> snapshot) {
-                if (snapshot.data == true) {
-                  return role == 'User Side'
-                      ? Dashboard()
-                      : TechnisionSide(name: role);
-                } else {
-                  return SplashScreen();
-                }
-              }),
-          navigatorKey: navigatorKey,
-          scrollBehavior: SBehavior(),
-          supportedLocales: LanguageDataModel.languageLocales(),
-          localizationsDelegates: [
-            AppLocalizations(),
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate
-          ],
-          localeResolutionCallback: (locale, supportedLocales) => locale,
-          locale: Locale(appStore.selectedLanguageCode),
-        ),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Household${!isMobile ? ' ${platformName()}' : ''}',
+        home: FutureBuilder(
+            future: checkLoginStatus(),
+            builder: (context, AsyncSnapshot<bool> snapshot) {
+              if (snapshot.data == true) {
+                return role == 'User Side'
+                    ? Dashboard()
+                    : TechnisionSide(name: role);
+              } else {
+                return SplashScreen();
+              }
+            }),
+        navigatorKey: navigatorKey,
+        scrollBehavior: SBehavior(),
+        supportedLocales: LanguageDataModel.languageLocales(),
       ),
     );
   }
